@@ -1,6 +1,4 @@
-小揚
-
-﻿/* Custom Extension Method */
+/* Custom Extension Method */
 (function($){
     
     $.customEvent = function (type, target) {
