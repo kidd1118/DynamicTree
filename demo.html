@@ -32,7 +32,7 @@
             var $t = $("<div/>").text("@").css({ "background-color": "red", "width": 20, "display": "inline-block" });
             tempData5.push({ value: "5" + i, text: "deepth 1 - indexindexindexindexindexindex" + i, type: "cc", children: tempData4.slice(0), dom: $t });
         }
-        var node1 = new DynamicTree({ data: tempData5, filter: false /*[{value: 1, text: 1, children: [{value: 11, text: 11}]}, {value: 2, text: 2}]*/ });
+        var node1 = new DynamicTree({ data: tempData5, filter: true /*[{value: 1, text: 1, children: [{value: 11, text: 11}]}, {value: 2, text: 2}]*/ });
         node1.render(document.getElementById("ap"));     
     }
     window.onresize = function () {
