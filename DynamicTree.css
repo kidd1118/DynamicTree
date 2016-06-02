@@ -44,7 +44,7 @@
 
 .DynamicTree .DynamicTree-Node > .icon {
     float: left;
-    background-image: url('../../images/Tree-Arrow.png');
+    background-image: url('sprite-expand-collapse.png');
     background-repeat: no-repeat;
     width: 15px;
     height: 15px;
