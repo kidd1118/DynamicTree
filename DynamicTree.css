@@ -1,0 +1,182 @@
+.DynamicTree {
+    overflow: hidden;
+    background-color: #161616;
+    padding-top: 6px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.DynamicTree .content {
+    overflow: auto;
+    padding-left: 6px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.DynamicTree .content > div {
+    width: 185px;
+}
+
+.DynamicTree .filter {
+    display: block;
+    height: 22px;
+    margin: 0 6px 6px 6px;
+    background-color: #1E1E1E;
+}
+
+.DynamicTree .DynamicTree-Node {
+    font-size: 12px;
+    font-family: Arial, Myriad Pro, Sans-Serif;
+    color: #fff;
+    letter-spacing: 0.05em;
+    line-height: 22px;
+    position: static;
+    clear: left;
+    display: flex;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    flex-direction: row;
+    min-width: 180px;
+}
+
+.DynamicTree .DynamicTree-Node > .icon {
+    float: left;
+    background-image: url('../../images/Tree-Arrow.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    flex: 0 0 15px;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.blank {
+    background-image: url('');
+}
+
+.DynamicTree .DynamicTree-Node > .icon.enable {
+    cursor: pointer;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.disable {
+    cursor: default;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.enable.expand {
+    background-position: 0px 0px;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.enable.collapse {
+    background-position: 0px -22px;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.enable.expand:hover {
+    background-position: -17px 0px;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.enable.collapse:hover {
+    background-position: -17px -22px;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.enable.expand.md {
+    background-position: -34px 0px;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.enable.collapse.md {
+    background-position: -34px -22px;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.disable.expand {
+    background-position: -51px 0px;
+}
+
+.DynamicTree .DynamicTree-Node > .icon.disable.collapse {
+    background-position: -51px -22px;
+}
+
+.DynamicTree .DynamicTree-Node > .dom {
+    padding: 0;
+    /*margin-right: 5px;*/
+    float: left;
+    position: static;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.DynamicTree .DynamicTree-Node > .text {
+    padding: 0 5px;
+    cursor: pointer;
+    min-width: 100px;
+    float: left;
+    white-space: nowrap;
+    position: static;
+    color: #fff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    flex: 1 1 auto;
+    min-width: auto;
+}
+
+.DynamicTree .DynamicTree-Node.selected > .text {
+    background-color: rgba(220, 139, 73, 0.65); /* #dc8b49 */
+}
+
+.DynamicTree .DynamicTree-Node.selected > .text.hover:hover {
+    background-color: rgba(220, 139, 73, 0.65);
+}
+
+.DynamicTree .DynamicTree-Node > .text.hover:hover {
+    background-color: rgba(220, 139, 73, 0.35);
+}
+
+.DynamicTree.disable .DynamicTree-Node > .text, .DynamicTree .DynamicTree-Node.disable > .text {
+    color: #4d4d4d;
+    cursor: default;
+}
+/*
+.DynamicTree .DynamicTree-Node > .text.dragging, .DynamicTree .DynamicTree-Node > .text.hover.dragging
+{
+    border: 1px solid #dc8b49;
+    background-color: Black;
+    color: White;
+    padding: 0 5px;
+    cursor: pointer;
+    line-height: 22px;
+    z-index: 99999;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+*/
+
+.DynamicTree .DynamicTree-Node > .dragging {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 990;
+}
+
+.DynamicTree .DynamicTree-Node > .dragging .dragging-frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0px !important;
+    z-index: -1;
+}
+
+.DynamicTree .DynamicTree-Node > .dragging .dragging-bgcolor {
+    border: 1px solid #dc8b49;
+    background-color: Black;
+    padding: 0 5px;
+    cursor: pointer;
+    float: left;
+    white-space: nowrap;
+    color: #fff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
