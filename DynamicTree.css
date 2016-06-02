@@ -69,10 +69,10 @@
 }
 
 .DynamicTree .DynamicTree-Node > .icon.enable.collapse {
-    background-position: 0px -22px;
+    background-position: 0px -15px;
 }
 
-.DynamicTree .DynamicTree-Node > .icon.enable.expand:hover {
+/*.DynamicTree .DynamicTree-Node > .icon.enable.expand:hover {
     background-position: -17px 0px;
 }
 
@@ -95,7 +95,7 @@
 .DynamicTree .DynamicTree-Node > .icon.disable.collapse {
     background-position: -51px -22px;
 }
-
+*/
 .DynamicTree .DynamicTree-Node > .dom {
     padding: 0;
     /*margin-right: 5px;*/
