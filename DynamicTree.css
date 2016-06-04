@@ -22,12 +22,13 @@
     display: block;
     height: 22px;
     margin: 0 6px 6px 6px;
-    background-color: #1E1E1E;
+    background-color: red;
 }
 
 .DynamicTree .DynamicTree-Node {
     font-size: 12px;
     font-family: Arial, Myriad Pro, Sans-Serif;
+    color: #3d3d3d;
     letter-spacing: 0.05em;
     line-height: 22px;
     position: static;
