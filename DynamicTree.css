@@ -1,6 +1,5 @@
 .DynamicTree {
     overflow: hidden;
-    background-color: #161616;
     padding-top: 6px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -29,7 +28,6 @@
 .DynamicTree .DynamicTree-Node {
     font-size: 12px;
     font-family: Arial, Myriad Pro, Sans-Serif;
-    color: #fff;
     letter-spacing: 0.05em;
     line-height: 22px;
     position: static;
