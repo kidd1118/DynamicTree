@@ -19,18 +19,17 @@
 }
 
 .DynamicTree .filter {
-    display: block;
+    display: flex;
     height: 22px;
     margin: 0 6px 6px 6px;
 }
 
 .DynamicTree .filter input {
     float: left;
-    height: 22px;
 }
 
 .DynamicTree .filter button {
-    width: 26px;
+    width: 24px;
     height: 24px;
     float: left;
 }
