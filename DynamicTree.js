@@ -231,6 +231,19 @@ DynamicTree = function (options) {
             .css({ "width": opts.width - 6 * 2 }) //margin left and right
             .addClass("filter")
             .insertBefore($content);
+        var input = $("<input/>").width($filter.width() - 26 * 2 /* button */).appendTo($filter);
+
+        var search = $("<button/>").addClass("aui-ui-ImageButton search").appendTo($filter)
+        .on("click", function () {
+            filterText = input.val();
+            me.search([{ text: filterText, operator: "like" }]);
+        });
+        var clear = $("<button/>").addClass("aui-ui-ImageButton clear").appendTo($filter)
+        .on("click", function () {
+            input.setValue("");
+            filterText = input.val();
+            me.search();
+        });
     };
     var _initailize = function () {
         data = opts.data;
