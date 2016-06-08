@@ -29,6 +29,24 @@
 	
 })(jQuery);
 
+var AttachEvent = function(dom, event, fn, capture) {
+    capture = capture || false;
+
+    if (window.addEventListener) dom.addEventListener(event, fn, capture);
+    else dom.attachEvent("on" + event, fn);
+
+    if (capture && dom.setCapture) dom.setCapture();
+}
+
+var DetachEvent = function(dom, event, fn, capture) {
+    capture = capture || false;
+
+    if (window.removeEventListener) dom.removeEventListener(event, fn, capture);
+    else dom.detachEvent("on" + event, fn);
+
+    if (capture && dom.releaseCapture) dom.releaseCapture();
+}
+
 TreeViewIndex = 1;
 
 DynamicTree = function (options) {
@@ -695,7 +713,7 @@ DynamicTree.Node = function (options) {
                                     // at least 100 pixels from the container
 
                                     ui.position.left = event.pageX;
-                                    ui.position.top = event.pageY - 65;
+                                    ui.position.top = event.pageY;
                                 },
                                 iframeFix: true,
                                 disabled: !opts.drag,
