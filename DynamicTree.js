@@ -233,12 +233,12 @@ DynamicTree = function (options) {
             .insertBefore($content);
         var input = $("<input/>").width($filter.width() - 26 * 2 /* button */).appendTo($filter);
 
-        var search = $("<button/>").addClass("aui-ui-ImageButton search").appendTo($filter)
+        var search = $("<div/>").addClass("aui-ui-ImageButton search").appendTo($filter)
         .on("click", function () {
             filterText = input.val();
             me.search([{ text: filterText, operator: "like" }]);
         });
-        var clear = $("<button/>").addClass("aui-ui-ImageButton clear").appendTo($filter)
+        var clear = $("<div/>").addClass("aui-ui-ImageButton clear").appendTo($filter)
         .on("click", function () {
             input.val("");
             filterText = input.val();
