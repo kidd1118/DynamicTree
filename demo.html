@@ -2,38 +2,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <script   src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js" integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="DynamicTree.js"></script>
     <link rel="Stylesheet" type="text/css" href="DynamicTree.css" />
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var tempData1 = [], tempData2 = [], tempData3 = [];
+            var max = 5;
+
+            for (var i = 1; i <= max; i++) {
+                tempData2.length = 0;
+                for (var j = 1; j <= max; j++) {
+                    tempData1.length = 0;
+                    for (var k = 1; k <= max; k++) {
+                        var $img = $("<div/>").css({
+                            "background-image": "url(boldons-icon-set-large-full-preview-opt.png)",
+                            "width": 22,
+                            "height": 22,
+                            "display": "inline-block",
+                            "background-size": "130px",
+                            "background-position": "-3px -203px"
+                        });
+                        tempData1.push({ value: "3" + k, text: "deepth3-index" + k, type: "aa", dom: $img });
+                    }
+                    tempData2.push({ value: "4" + j, text: "deepth2-index" + j, type: "bb", children: tempData1.slice(0) });
+                }
+                tempData3.push({ value: "5" + i, text: "deepth1-index" + i, type: "cc", children: tempData2.slice(0) });
+            }
+            var node1 = new DynamicTree({ data: tempData3, filter: true, dragNode: true });
+            node1.render(document.getElementById("ap"));
+        }
+    </script>
 </head>
 <body>
     <div id="ap">
     </div>
 </body>
-<script type="text/javascript">
-
-    window.onload = function () {
-
-        var tempData = [], tempData1 = [], tempData2 = [], tempData3 = [], tempData4 = [], tempData5 = [];
-        var max = 10;
-
-        for (var i = 1; i <= max; i++) {
-            tempData3.push({ value: "3" + i, text: "deepth 3 - index" + i, type: "aa", children: tempData2.slice(0) });
-        }
-        for (var i = 1; i <= max; i++) {
-            tempData4.push({ value: "4" + i, text: "deepth 2 - index" + i, type: "bb", children: tempData3.slice(0) });
-        }
-        for (var i = 1; i <= max; i++) {
-            var $t = $("<div/>").text("@").css({ "background-color": "red", "width": 20, "display": "inline-block" });
-            tempData5.push({ value: "5" + i, text: "deepth 1 - indexindexindexindexindexindex" + i, type: "cc", children: tempData4.slice(0), dom: $t });
-        }
-        var node1 = new DynamicTree({ data: tempData5, filter: true, dragNode: true });
-        node1.render(document.getElementById("ap"));     
-    }
-    window.onresize = function () {
-
-    }
-
-</script>
 </html>
