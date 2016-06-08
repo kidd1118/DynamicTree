@@ -240,7 +240,7 @@ DynamicTree = function (options) {
         });
         var clear = $("<button/>").addClass("aui-ui-ImageButton clear").appendTo($filter)
         .on("click", function () {
-            input.setValue("");
+            input.val("");
             filterText = input.val();
             me.search();
         });
